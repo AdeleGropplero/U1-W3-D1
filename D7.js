@@ -8,7 +8,7 @@ const chain = function (one, two) {
   const chain1 = primi2.concat(ultimi3).toUpperCase();
   return chain1;
 };
-console.log(chain("claudia", "adele"));
+console.log("es. 1", chain("chiara", "adele"));
 
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
@@ -22,24 +22,23 @@ const random = function () {
   return magicN;
 };
 const randomArray = random();
-console.log(randomArray);
+console.log("es. 2", randomArray);
 
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
 const randomArray2 = randomArray.slice();
-const pari = function (n) {
-  for (let i = 0; i < randomArray2.length; i++) {
-    const element = array[];
-    
-  }
-  if ()
-  
-}
+const soloPari = randomArray2.filter((num) => num % 2 === 0);
+console.log("es. 3", soloPari);
 
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+let somma = 0;
+randomArray2.forEach((element) => {
+  somma += element;
+});
+console.log("es. 4", somma);
 
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
