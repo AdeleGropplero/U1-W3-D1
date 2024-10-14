@@ -43,6 +43,8 @@ console.log("es. 4", somma);
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
+const sommaRed = randomArray2.reduce((acc, curr) => acc + curr, 0);
+console.log("es. 5", sommaRed);
 
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
