@@ -47,17 +47,34 @@ const sommaRed = randomArray2.reduce((acc, curr) => acc + curr, 0);
 console.log("es. 5", sommaRed);
 
 /* ESERCIZIO 6 (map)
-  Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
+  Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, 
+  ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const numbers1 = numbers.map((added) => added + 1);
+console.log("es. 6", numbers1);
 
 /* ESERCIZIO 7 (map)
-  Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
+  Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array 
+  contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
+const str = ["EPICODE", "is", "great"];
+const strNum = str.map((toNum) => toNum.length);
+console.log("es. 7", strNum);
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
+
+const dispari = function () {
+  let odd = [];
+  for (let i = 1; i < 100; i += 2) {
+    odd.push(i);
+  }
+  return odd;
+};
+console.log("es. 8", dispari());
 
 /* Questo array di film verrà usato negli esercizi a seguire. Non modificarlo e scorri oltre per riprendere gli esercizi :) */
 const movies = [
@@ -178,10 +195,16 @@ const movies = [
 /* ESERCIZIO 9 (forEach)
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
+const film = movies.forEach((film1) => movies.Year < film1.Year);
+console.log("es. 9", film); //da capire
 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+const totFilm = function (array) {
+  return array.length;
+};
+console.log(totFilm("es. 10", movies));
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
@@ -194,11 +217,28 @@ const movies = [
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+const results = movies.reduce((acc, curr) => acc + parseInt(curr.Year), 0);
+console.log("es. 13", results);
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+const getMovie = movies.find((movie) => movie.imdbID === "tt4154756");
+console.log("es. 14", getMovie);
+
+const getMovie2 = (array, imdbID) => {
+  const movie = array.find((movie) => movie.imdbID === imdbID);
+  return movie.Title;
+};
+console.log("es. 14 pt.2", getMovie2(movies, "tt4154756"));
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
+const getIndexFromYear = (array, year) => {
+  const movieIndex = array.findIndex((movie) => movie.Year === year);
+  return movieIndex;
+};
+console.log(getIndexFromYear("es. 15", movies, "2003"));
